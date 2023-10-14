@@ -1,0 +1,417 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+}
+@font-face {
+    font-family: "Anzumoji";
+    src: url("../font/anzumoji.ttf") format("truetype");
+}
+@font-face {
+    font-family: "BaseBul";
+    src: url("../font/basebul-2o9ve.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Borela";
+    src: url("../font/borela-yw6qv.ttf") format("truetype");
+}
+@font-face {
+    font-family: "XingKai";
+    src: url("../font/YeZiGongChangJingHongXingKai-2.ttf") format("truetype");
+}
+.Anzumoji{
+    font-family: 'Anzumoji', sans-serif;
+}
+.BaseBul{
+    font-family: 'BaseBul', sans-serif;
+}
+.Borela{
+    font-family: 'Borela', sans-serif;
+}
+.XingKai{
+    font-family: 'XingKai', sans-serif;
+}
+.PageMainContainer{
+    height: 100vh;
+    width: 100vw;
+    min-width: 1800px;
+    min-height: 900px;
+    background-image: url(../media/Cover.jpg);
+    background-size: cover;
+    /* filter: ; */
+    position: relative;
+    z-index: 8;
+}
+.BG_Cover{
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    min-width: 1800px;
+    min-height: 900px;
+    background-color: rgba(0, 0, 0, 0.22);
+    backdrop-filter: sepia(32%) grayscale(70%);
+    pointer-events: none;
+    user-select: none;
+    z-index: 1;
+    display: flex;
+}
+.BG_Cover .LeftPlaceHolder{
+    width: 60%;
+    height: 100%;
+}
+@keyframes placeHolderEnter {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.BG_Cover .RightPlaceHolder{
+    width: 40%;
+    height: 100%;
+    transform: translateX(100%);
+    animation: placeHolderEnter 0.6s forwards;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.BG_Cover_2{
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    min-width: 1800px;
+    min-height: 900px;
+    backdrop-filter: blur(3px);
+    pointer-events: none;
+    user-select: none;
+    z-index: 2;
+}
+.PlayerBody{
+    height: 100vh;
+    width: 100vw;
+    min-width: 1800px;
+    min-height: 900px;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    /* padding-top: 10%; */
+}
+.ToasterContainer{
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 101;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Toaster{
+    /* box-sizing: border-box; */
+    width: 0px;
+    height: 0px;
+    border-left: 6px solid black;
+    border-right: 6px solid black;
+    border-top:1px solid black ;
+    border-bottom:1px solid black ;
+    background-color: #B2B2B2;
+    color: white;
+    font-size: 42px;
+    padding-left: 56px;
+    padding-right: 56px;
+    line-height: 62px;
+    vertical-align: middle;
+    font-family: 'XingKai',sans-serif;
+    overflow: hidden;
+    user-select: none;
+    text-align: center;
+    height: 62px;
+}
+.notShowup{
+    display: none;
+}
+@keyframes lenthen {
+    0%{
+        width: 0px;
+        opacity: 0.2;
+    }
+    100%{
+        width: 90%;
+        opacity: 1;
+    }
+}
+@keyframes shorten {
+    0%{
+        width: 90%;
+        opacity: 1;
+    }
+    100%{
+        display: none;
+        border: none;
+        width: 35%;
+        opacity: 0.2;
+    }
+}
+.noMessage{
+    animation: shorten 1.5s linear forwards;
+    /* display: none; */
+    pointer-events: none;
+    
+}
+.onMessage{
+    animation: lenthen 1.5s linear forwards;
+}
+
+.MainRight{
+    position: relative;
+    z-index: 5;
+    width: 40%;
+    height: 100%;
+    padding: 32px;
+    box-sizing: border-box;
+}
+.MainRight .ContextWrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.ContextWrapper .SongInfo{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+}
+.SongInfo .SongOther{
+    width: 0px;
+    height: fill;
+    flex: 1;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+}
+@keyframes dropdown {
+    0%{
+        transform: translateY(-300%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+.SongOther .InfoWrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding-left: 64px;
+    box-sizing: border-box;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+.InfoWrapper .InfoItem:nth-child(1){
+    animation-delay: 0.8s;
+}
+.InfoWrapper .InfoItem:nth-child(2){
+    animation-delay: 1.1s;
+}
+.InfoWrapper .InfoItem:nth-child(3){
+    animation-delay: 1.4s;
+}
+.InfoWrapper .InfoItem:nth-child(4){
+    animation-delay: 1.7s;
+}
+.InfoWrapper .InfoItem{
+    transform: translateY(-300%);
+    width: fit-content;
+    font-size: 60px;
+    word-break: break-all;
+    writing-mode: vertical-rl;
+    user-select: none;
+    animation: dropdown 1.5s forwards;
+}
+.InfoWrapper .InfoItem.Intro{
+    color: silver;
+    text-align: center;
+    font-size: 46px;
+    word-spacing: 5px;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    filter: drop-shadow(0px 6px 3px black);
+}
+.InfoWrapper .InfoItem.Info{
+    /* padding-left: 32px; */
+    max-height: 600px;
+    padding-top: 21px;
+    box-sizing: border-box;
+    color: silver;
+    position: relative;
+    display: flex;
+    align-items: center;
+    -webkit-text-stroke: 2px black;
+    white-space:nowrap;
+}
+.InfoWrapper .InfoItem.Info div{
+    height: fit-content;
+    overflow:hidden;
+    border-left: 4px solid silver;
+    word-break: keep-all;
+    text-overflow:ellipsis;
+}
+.InfoWrapper .InfoItem.Info::before{
+    content:"★";
+    -webkit-text-stroke: 1px white;
+    font-size: 55px;
+}
+@keyframes headIn {
+    0%{
+        transform: translateX(200%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.SongInfo .SongTitle{
+    transform: translateX(200%);
+    user-select: none;
+    width: 88px;
+    height: fit-content;
+    font-size: 101px;
+    font-weight: bolder;
+    writing-mode:vertical-rl;
+    letter-spacing: 16px;
+    color: transparent;
+    -webkit-text-stroke: 1px black;
+    animation: headIn 1.2s forwards;
+    animation-delay: 0.6s;
+    filter: drop-shadow(0px 0px 6px whitesmoke);
+}
+.MainLeft{
+    width: 60%;
+    height: 100%;
+    position: relative;
+    z-index: 5;
+}
+@keyframes boxDrop {
+    0%{
+        transform: translateY(-100%)  translateX(-20%);
+    }
+    100%{
+        transform: translateY(-50%)  translateX(-20%);
+    }
+}
+.LeftPlaceHolder{
+    position: relative;
+    overflow-y: hidden;
+}
+.LeftPlaceHolder .droppingBoxA{
+    position: absolute;
+    left: 0;
+    top: 0;
+    animation-delay: 0.3s;
+    animation: boxDrop 1.5s forwards;
+    transform: translateY(-100%) translateX(-20%);
+    height: 50%;
+    width: 100%;
+    background-color: transparent;
+    border: 8px solid black;
+    z-index: 6;
+}
+@keyframes boxPopUp {
+    0%{
+        padding-top:100%;
+    }
+    100%{
+        padding-top:21%;
+    }
+}
+.LeftPlaceHolder .pushingBoxB{
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding-top: 100%;
+    padding-right: 3%;
+    animation-delay: 0.6s;
+    animation: boxPopUp 1.2s forwards;
+    /* box-sizing: border-box; */
+    z-index: 6;
+}
+.LeftPlaceHolder .pushingBoxB .Box{
+    height: 55%;
+    width: 85%;
+    background-color: silver;
+    z-index: 6;
+    float: right;
+}
+@keyframes boxPopRight {
+    0%{
+        transform: translateX(-200%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+.MainLeft .CoverBox{
+    height: 100%;
+    width: 100%;
+    padding-top: 14%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.MainLeft .CoverBox .Box{
+    animation-delay: 0.8s;
+    animation: boxPopRight 1.1s forwards;
+    position: relative;
+    z-index: 8;
+    transform: translateX(-200%);
+    border: 2px solid white;
+    box-sizing: border-box;
+    height: 55%;
+    width: 85%;
+}
+.MainLeft .CoverBox .CanvasContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+}
+.MainLeft .CoverBox img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.MainLeft .CoverBox .Controller{
+    width: 85%;
+    height: 5%;
+    opacity: 0;
+    border: 2px solid white;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 33px;
+    font-weight: bolder;
+    color:black;
+    fill:black;
+    transform:translateY(-100%);
+    transition: all 0.8s,opacity 0.2s;
+    transition-delay: 0.6s;
+}
+.MainLeft .CoverBox .Box:hover + div.Controller{
+    transition-delay: 0s !important;
+    transform: translateY(0%);
+    background-color: silver;
+    opacity: 1;
+}
+.MainLeft .CoverBox div.Controller:hover{
+    transition-delay: 0s !important;
+    transform: translateY(0%);
+    background-color: silver;
+    opacity: 1;
+}

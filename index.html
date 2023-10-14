@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Play Code By Daiyosei</title>
+    <script>console.log("Github:https://github.com/Toukaiteio");</script>
+    <script>console.log("Repository:https://github.com/Toukaiteio/music_player_example_frontend_basic_study");</script>
+    <link rel="stylesheet" href="./static/util/Style.css">
+    
+</head>
+<body>
+<div class="ToasterContainer">
+    <div class="Toaster noMessage notShowup" id="TOASTER"></div>
+</div>
+<div class="PageMainContainer">
+    <div class="BG_Cover" id="BGCOVER">
+        <div class="LeftPlaceHolder">
+            <div class="droppingBoxA"></div>
+            <div class="pushingBoxB">
+                <div class="Box"></div>
+            </div>
+        </div>
+        <div class="RightPlaceHolder"></div>
+    </div>
+    <div class="BG_Cover_2"></div>
+    <div class="PlayerBody">
+        
+        <div class="MainLeft" id="MAINLEFT">
+            
+            <div class="CoverBox">
+                
+                <div class="Box">
+                    <img src="./static/media/Cover.jpg">
+                    <div class="CanvasContainer" id="CC"></div>
+                </div>
+                <div class="Controller" style="display: none;" id="OP"></div>
+            </div>
+            
+        </div>
+        <div class="MainRight" id="MAINRIGHT">
+            <div class="ContextWrapper">
+                <div class="SongInfo">
+                    <div class="SongOther">
+                        <div class="InfoWrapper">
+                            <div class="InfoItem Borela Intro">
+                                <div>
+                                    A Song of Losing Dream
+                                </div>
+                            </div>
+                            <div class="InfoItem Anzumoji Info">
+                                <div>
+                                    音楽>  稲葉曇
+                                </div>
+                            </div>
+                            <div class="InfoItem Anzumoji Info">
+                                <div>
+                                    イラスト>  ぬくぬくにぎりめし
+                                </div>
+                            </div>
+                            <div class="InfoItem Anzumoji Info">
+                                <div>
+
+                                    ボカ >  音街ウナ
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="SongTitle Anzumoji" id="SONGTITLE">
+                        『期待通り』
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+</body>
+<footer>
+    <script src="./static/util/Util.js"></script>
+</footer>
+</html>
